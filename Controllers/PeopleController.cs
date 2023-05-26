@@ -5,8 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using DockerApiTest.Data;
-using DockerApiTest.Models;
+using persona_api.Models;
+using persona_api.Data;
 
 namespace DockerApiTest.Controllers
 {
@@ -55,7 +55,7 @@ namespace DockerApiTest.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPerson(int id, Person person)
         {
-            if (id != person.Id)
+            if (id != person.CI)
             {
                 return BadRequest();
             }
@@ -93,7 +93,7 @@ namespace DockerApiTest.Controllers
             _context.People.Add(person);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPerson", new { id = person.Id }, person);
+            return CreatedAtAction("GetPerson", new { id = person.CI }, person);
         }
 
         // DELETE: api/People/5
@@ -118,7 +118,7 @@ namespace DockerApiTest.Controllers
 
         private bool PersonExists(int id)
         {
-            return (_context.People?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.People?.Any(e => e.CI == id)).GetValueOrDefault();
         }
     }
 }

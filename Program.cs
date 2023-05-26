@@ -1,7 +1,7 @@
-using DockerApiTest.Data;
 using Microsoft.EntityFrameworkCore;
+using persona_api.Data;
 
-namespace DockerApiTest;
+namespace persona_api;
 
 public class Program
 {

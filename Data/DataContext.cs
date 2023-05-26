@@ -1,7 +1,7 @@
-﻿using DockerApiTest.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using persona_api.Models;
 
-namespace DockerApiTest.Data
+namespace persona_api.Data
 {
     public class DataContext : DbContext
     {

@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DockerApiTest.Models
+namespace persona_api.Models
 {
     public class Person
     {
-        public int Id { get; set; }
+        [Key]
+        public int CI { get; set; }
         public string Name { get; set; } = null!;
     }
 }
